@@ -1,0 +1,659 @@
+/* WolfZone — sistema visual oscuro con un único acento dorado */
+:root {
+  /* Marca */
+  --black: #000000;
+  --gold: #c6a25f;
+  --cream: #f0e9d6;
+
+  /* Derivados */
+  --gold-deep: #8a6e3b;
+  --gold-wash: rgba(198, 162, 95, 0.08);
+  --text: var(--cream);
+  --text-2: #b9b2a1;
+  --text-3: #85806f;
+  --surface: #0b0b0b;
+  --surface-2: #151515;
+  --border: #262421;
+  --border-strong: #3a3732;
+
+  --font: 'Manrope', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --radius-card: 16px;
+  --radius-pill: 9999px;
+  --max: 1200px;
+  --gutter: 24px;
+  --nav-h: 64px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-h);
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.007em;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+dl,
+dd {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+
+:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.accent {
+  color: var(--gold);
+}
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.43;
+  white-space: nowrap;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.btn-lg {
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--black);
+}
+
+.btn-primary:hover {
+  background: #d4b273;
+  border-color: var(--gold-deep);
+}
+
+.btn-ghost {
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.btn-ghost:hover {
+  border-color: #55514a;
+  background: rgba(240, 233, 214, 0.04);
+}
+
+/* ---------- Navegación ---------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: var(--nav-h);
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.brand img {
+  border-radius: 50%;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  margin-right: auto;
+  font-size: 14px;
+  color: var(--text-2);
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 72px;
+  padding-bottom: 80px;
+}
+
+.hero-crest {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 32px;
+}
+
+.pill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  margin-bottom: 24px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--text-2);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.display {
+  font-size: clamp(40px, 7vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+.lead {
+  max-width: 560px;
+  margin-top: 24px;
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--text-2);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+/* ---------- Datos ---------- */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.fact {
+  padding: 28px 24px;
+}
+
+.fact + .fact {
+  border-left: 1px solid var(--border);
+}
+
+.fact dd {
+  margin-top: 8px;
+  font-size: 24px;
+  line-height: 1.33;
+}
+
+/* ---------- Secciones ---------- */
+.section {
+  padding-top: 112px;
+}
+
+.section-header {
+  max-width: 640px;
+  margin-bottom: 48px;
+}
+
+.eyebrow {
+  color: var(--gold);
+}
+
+.heading {
+  margin-top: 12px;
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.section-sub {
+  margin-top: 12px;
+  font-size: 16px;
+  color: var(--text-2);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+/* ---------- Jugadores ---------- */
+.player-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 4), 1fr);
+  gap: 16px;
+}
+
+.player-card:hover {
+  border-color: var(--gold-deep);
+}
+
+/* Las fotos traen fondo negro: el fondo de la tarjeta es negro para que se fundan */
+.player-media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background: var(--black);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.player-number {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 200px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #57514a;
+  user-select: none;
+  transition: -webkit-text-stroke-color 0.2s;
+}
+
+.player-card:hover .player-number {
+  -webkit-text-stroke-color: var(--gold-deep);
+}
+
+/* La foto ocupa la parte baja de la tarjeta para dejar ver el dorsal arriba.
+   `lighten` hace que el fondo negro de la foto deje pasar el dorsal. */
+.player-media img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 76%;
+  object-fit: contain;
+  object-position: bottom center;
+  mix-blend-mode: lighten;
+  transition: transform 0.35s ease;
+  transform-origin: bottom center;
+}
+
+.player-card:hover .player-media img {
+  transform: scale(1.04);
+}
+
+.player-info {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 16px 20px 18px;
+  border-top: 1px solid var(--border);
+}
+
+.player-info h3 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.38;
+}
+
+.player-card:hover .player-info .mono {
+  color: var(--gold);
+}
+
+/* ---------- Trofeos ---------- */
+.trophy-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 4), 1fr);
+  gap: 16px;
+}
+
+.trophy-card:hover {
+  border-color: var(--gold-deep);
+}
+
+.trophy-media {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: var(--black);
+  overflow: hidden;
+}
+
+.trophy-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.trophy-media img.is-cover {
+  object-fit: cover;
+}
+
+.trophy-card:hover .trophy-media img {
+  transform: scale(1.04);
+}
+
+.trophy-wins {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--gold);
+  color: var(--black);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.trophy-info {
+  padding: 16px 20px 20px;
+  border-top: 1px solid var(--border);
+}
+
+.trophy-info h3 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.38;
+}
+
+.trophy-info .mono {
+  display: block;
+  margin-top: 6px;
+}
+
+.trophy-card:hover .trophy-info .mono {
+  color: var(--gold);
+}
+
+/* ---------- Playeras ---------- */
+.kit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.kit-card:hover {
+  border-color: var(--gold-deep);
+}
+
+.kit-media {
+  aspect-ratio: 1206 / 1370;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.kit-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.kit-card:hover .kit-media img {
+  transform: scale(1.03);
+}
+
+.kit-info {
+  display: flex;
+  gap: 16px;
+  padding: 20px 24px 24px;
+  border-top: 1px solid var(--border);
+}
+
+.kit-info .mono {
+  padding-top: 6px;
+  color: var(--gold);
+}
+
+.kit-info h3 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.38;
+}
+
+.kit-info p {
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--text-2);
+}
+
+/* ---------- Instagram ---------- */
+.follow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 64px 24px;
+  background: var(--surface);
+}
+
+.follow img {
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+
+.follow .btn {
+  margin-top: 32px;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  margin-top: 112px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  font-size: 14px;
+}
+
+.footer-ig {
+  display: inline-flex;
+  padding: 8px;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  color: var(--text-2);
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.footer-ig:hover {
+  color: var(--gold);
+  border-color: var(--gold-deep);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .player-number {
+    font-size: 140px;
+  }
+
+  .kit-grid {
+    gap: 12px;
+  }
+
+  .kit-info {
+    padding: 16px 18px 20px;
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --gutter: 16px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-inner {
+    justify-content: space-between;
+  }
+
+  .hero {
+    padding-top: 48px;
+    padding-bottom: 56px;
+  }
+
+  .hero-crest {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 24px;
+  }
+
+  .facts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fact {
+    padding: 20px 16px;
+  }
+
+  .fact:nth-child(3) {
+    border-left: 0;
+  }
+
+  .fact:nth-child(n + 3) {
+    border-top: 1px solid var(--border);
+  }
+
+  .fact dd {
+    font-size: 20px;
+  }
+
+  .section {
+    padding-top: 80px;
+  }
+
+  .player-grid,
+  .trophy-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .trophy-info {
+    padding: 12px 14px 14px;
+  }
+
+  .trophy-info h3 {
+    font-size: 16px;
+  }
+
+  .player-number {
+    font-size: 120px;
+  }
+
+  .player-info {
+    padding: 12px 14px 14px;
+  }
+
+  .player-info h3 {
+    font-size: 16px;
+  }
+
+  .kit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    flex-wrap: wrap;
+  }
+
+  .footer-inner > .mono {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
