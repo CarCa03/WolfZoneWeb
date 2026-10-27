@@ -102,7 +102,7 @@ function Players() {
       <SectionHeader eyebrow="01 — Plantilla" title="Los lobos">
         Los jugadores que defienden el escudo de WolfZone en cada partido.
       </SectionHeader>
-      <ul className="player-grid" style={{ '--cols': players.length % 3 === 0 ? 3 : 4 }}>
+      <ul className="player-grid" style={{ '--desktop-cols': players.length % 3 === 0 ? 3 : 4 }}>
         {players.map((p) => (
           <li key={p.name} className="card player-card">
             <div className="player-media">

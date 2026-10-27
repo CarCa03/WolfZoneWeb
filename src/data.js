@@ -2,6 +2,7 @@ import AlfredCF94 from './assets/players/AlfredCF94.jpg'
 import ByOnex from './assets/players/ByOnex.jpg'
 import Chones from './assets/players/Chones.jpg'
 import Cyrox from './assets/players/Cyrox.png'
+import Darkness from './assets/players/Darkness.jpg'
 import DieGOAT from './assets/players/DieGOAT.jpg'
 import Duende from './assets/players/Duende.jpg'
 import ElChris from './assets/players/ElChris.jpg'
@@ -32,6 +33,7 @@ export const players = [
   { name: 'ByOnex', number: 96, image: ByOnex },
   { name: 'Chones', number: 8, image: Chones },
   { name: 'Cyrox', number: 11, image: Cyrox },
+  { name: 'Darkness', number: 18, image: Darkness },
   { name: 'DieGOAT', number: 10, image: DieGOAT },
   { name: 'Duende', number: 17, image: Duende },
   { name: 'ElChris', number: 6, image: ElChris },

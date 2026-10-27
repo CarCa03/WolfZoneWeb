@@ -304,10 +304,18 @@ h3 {
 }
 
 /* ---------- Jugadores ---------- */
+/* Flex en lugar de grid para que una última fila incompleta quede centrada */
 .player-grid {
-  display: grid;
-  grid-template-columns: repeat(var(--cols, 4), 1fr);
-  gap: 16px;
+  --cols: var(--desktop-cols, 4);
+  --gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gap);
+}
+
+.player-grid > li {
+  width: calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));
 }
 
 .player-card:hover {
@@ -609,7 +617,11 @@ h3 {
     padding-top: 80px;
   }
 
-  .player-grid,
+  .player-grid {
+    --cols: 2;
+    --gap: 12px;
+  }
+
   .trophy-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
