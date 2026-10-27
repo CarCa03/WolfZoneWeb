@@ -322,7 +322,6 @@ h3 {
   border-color: var(--gold-deep);
 }
 
-/* Las fotos traen fondo negro: el fondo de la tarjeta es negro para que se fundan */
 .player-media {
   position: relative;
   aspect-ratio: 4 / 5;
@@ -350,8 +349,8 @@ h3 {
   -webkit-text-stroke-color: var(--gold-deep);
 }
 
-/* La foto ocupa la parte baja de la tarjeta para dejar ver el dorsal arriba.
-   `lighten` hace que el fondo negro de la foto deje pasar el dorsal. */
+/* La foto (recorte con fondo transparente) va encima del dorsal y lo tapa,
+   y ocupa la parte baja de la tarjeta para que el dorsal se vea arriba. */
 .player-media img {
   position: absolute;
   bottom: 0;
@@ -360,7 +359,6 @@ h3 {
   height: 76%;
   object-fit: contain;
   object-position: bottom center;
-  mix-blend-mode: lighten;
   transition: transform 0.35s ease;
   transform-origin: bottom center;
 }

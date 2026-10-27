@@ -1,13 +1,13 @@
-import AlfredCF94 from './assets/players/AlfredCF94.jpg'
-import ByOnex from './assets/players/ByOnex.jpg'
-import Chones from './assets/players/Chones.jpg'
+import AlfredCF94 from './assets/players/AlfredCF94.webp'
+import ByOnex from './assets/players/ByOnex.webp'
+import Chones from './assets/players/Chones.webp'
 import Cyrox from './assets/players/Cyrox.png'
-import Darkness from './assets/players/Darkness.jpg'
-import DieGOAT from './assets/players/DieGOAT.jpg'
-import Duende from './assets/players/Duende.jpg'
-import ElChris from './assets/players/ElChris.jpg'
-import Jaredftp13 from './assets/players/Jaredftp13.jpg'
-import JosDre from './assets/players/JosDre.jpg'
+import Darkness from './assets/players/Darkness.webp'
+import DieGOAT from './assets/players/DieGOAT.webp'
+import Duende from './assets/players/Duende.webp'
+import ElChris from './assets/players/ElChris.webp'
+import Jaredftp13 from './assets/players/Jaredftp13.webp'
+import JosDre from './assets/players/JosDre.webp'
 
 import kitLocal from './assets/kits/local.jpg'
 import kitVisitante from './assets/kits/visitante.jpg'
@@ -27,7 +27,7 @@ import trophyFaCup from './assets/trophies/fa-cup.jpg'
 export const INSTAGRAM_URL = 'https://www.instagram.com/wolfzone.esports/'
 
 // `number` es el dorsal de cada jugador; déjalo en null si no tiene.
-// Las fotos son de medio cuerpo con fondo negro, alineadas arriba en la tarjeta.
+// Las fotos son recortes de medio cuerpo con fondo transparente.
 export const players = [
   { name: 'AlfredCF94', number: 9, image: AlfredCF94 },
   { name: 'ByOnex', number: 96, image: ByOnex },
